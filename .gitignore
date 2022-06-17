@@ -1,0 +1,27 @@
+# Blacklist files/folders in same directory as the .gitignore file
+/*
+
+# Whitelist some files
+!.gitignore
+!README.md
+# nvim settings
+!init.vim
+# coc settings
+!coc-settings.json
+
+# Whitelist
+# trailing "/" is optional for folders, may match file though.
+# "/" is NOT optional when followed by a *
+# nvim theme
+!colors
+!after
+!autoload
+autoload/*
+!autoload/airline
+!autoload/lightline
+!autoload/dracula.vim
+!autoload/onedark.vim
+!autoload/everforest.vim
+!autoload/gruvbox_material.vim
+# nvim plug-vim
+!autoload/plug.vim
