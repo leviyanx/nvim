@@ -140,9 +140,6 @@ vnoremap <leader>ss y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 set scrolloff=5 " lines to cursor
 
-" open a vertical terminal in vim
-nnoremap <leader>xz :vs +te<CR>
-
 " search visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
@@ -374,6 +371,19 @@ nnoremap <F5> :UndotreeToggle<CR>
 
 " 13 vim-surround
 Plug 'tpope/vim-surround'
+
+" 14 Open terminal in neovim
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+lua require("toggleterm").setup()
+" set
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+" By applying the mappings this way you can pass a count to your
+" mapping to open a specific window.
+" For example: 2<C-t> will open terminal 2
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 " All of your Plugins must be added above the following line
 call plug#end()
