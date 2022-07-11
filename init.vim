@@ -358,7 +358,6 @@ let g:rnvimr_enable_picker = 1
 let g:rnvimr_draw_border = 0
 " Map Rnvimr action
 let g:rnvimr_action = {
-            \ '<C-t>': 'NvimEdit tabedit',
             \ '<C-x>': 'NvimEdit split',
             \ '<C-v>': 'NvimEdit vsplit',
             \ 'gw': 'JumpNvimCwd',
@@ -373,17 +372,12 @@ nnoremap <F5> :UndotreeToggle<CR>
 Plug 'tpope/vim-surround'
 
 " 14 Open terminal in neovim
-Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
-lua require("toggleterm").setup()
-" set
-autocmd TermEnter term://*toggleterm#*
-      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+Plug 'skywind3000/vim-terminal-help'
 
-" By applying the mappings this way you can pass a count to your
-" mapping to open a specific window.
-" For example: 2<C-t> will open terminal 2
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+let g:terminal_key = '<c-t>'
+
+" toggle insert/normal mode in terminal
+tnoremap <C-N> <C-\><C-N>
 
 " All of your Plugins must be added above the following line
 call plug#end()
