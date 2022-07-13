@@ -143,6 +143,11 @@ set scrolloff=5 " lines to cursor
 " search visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+" Enable blinking together with different cursor shapes for insert/command mode, and cursor highlighting:
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+\,a:blinkwait175-blinkoff150-blinkon175-Cursor/lCursor
+\,sm:block-blinkwait175-blinkoff150-blinkon175
+
 " Basic mappings
 noremap ; :
 nnoremap Q :q<CR>
