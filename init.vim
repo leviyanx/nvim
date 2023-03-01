@@ -18,6 +18,10 @@ endfunction
 " Execuate this function only once to reduce start time
 let env = WhichEnv()
 
+
+" disable swap file
+set noswapfile
+
 " Turn on syntax highlighting.
 syntax on
 
