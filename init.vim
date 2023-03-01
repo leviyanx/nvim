@@ -288,10 +288,11 @@ nnoremap <silent> <leader>xm :Rg<CR>
 " 3 visual multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" 4 Airline
+" 4 Line Plugin
+" 4.1 airline
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enable = 1
-" 4.1 set airline 
+" 4.1.1 set airline 
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#formatter = 'default'
@@ -299,13 +300,13 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnametruncate = 20
 let g:airline#extensions#tabline#fnamecollapse = 2
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-" 4.2 set key bindings 
+" 4.1.2 set key bindings 
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
 nmap <leader>4 <Plug>AirlineSelectTab4
 nmap <leader>5 <Plug>AirlineSelectTab5
-" 4.3 airline theme
+" 4.1.3 airline theme
 Plug 'vim-airline/vim-airline-themes'
 
 " 5 Rust-specific plugin
@@ -319,12 +320,12 @@ let g:rustfmt_autosave = 1 " automatically formatted for standard style
 " 6.1 Dracula-theme
 " 6.2 OneDark
 " 6.3 everforest
+Plug 'sainnhe/everforest'
 " 6.4 gruvbox-material
 Plug 'sainnhe/gruvbox-material'
-" 6.5 light quiet
-Plug 'aonemd/quietlight.vim'
-" 6.6 iceberg
-Plug 'cocopon/iceberg.vim'
+" 6.5 edge (Edge light is nice)
+" Plug 'sainnhe/edge'
+
 
 " 7 Commentary
 Plug 'tpope/vim-commentary', { 'on': 'Commentary' }
@@ -387,12 +388,23 @@ call plug#end()
 function! SetBackground()
     let hour = strftime("%H")
     if 6 <= hour && hour < 18
+        if has('termguicolors')
+          set termguicolors
+        endif
+
         set background=light
-        set t_Co=256
-        colorscheme quietlight
-        let g:airline_theme='papercolor'
+
+        " edge
+        " let g:airline_theme='edge'
+        " colorscheme edge
+
+        " everforest
+        let g:everforest_background = 'hard'
+        let g:airline_theme='everforest'
+        colorscheme everforest
     else
         set background=dark
+        let g:airline_theme='gruvbox_material'
         colorscheme gruvbox-material
     endif
 endfunction
