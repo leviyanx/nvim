@@ -351,7 +351,7 @@ Plug 'MortenStabenau/matlab-vim', { 'for': 'matlab'}
 " 10 lazygit
 Plug 'kdheepak/lazygit.nvim'
 " setup mapping to call :LazyGit
-nnoremap <silent> <leader>l :LazyGit<CR>
+nnoremap <silent> <leader>g :LazyGit<CR>
 
 " 11 ranger
 Plug 'kevinhwang91/rnvimr'
