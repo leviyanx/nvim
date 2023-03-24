@@ -274,10 +274,6 @@ nmap <leader>xf :CocCommand explorer<CR>
 " 2.2 following setting
 Plug '~/.fzf'           " enable fzf which installed by git
 Plug 'junegunn/fzf.vim' " add fzf.vim
-" This is the default extra key bindings
-" let g:fzf_action = {
-"     \ 'ctrl-x': 'split',
-"     \ 'ctrl-v': 'vsplit',}
 " Default fzf layout
 " - down / up / left / right
 let g:fzf_layout = {'down': '~40%'}
