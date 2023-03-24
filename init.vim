@@ -275,10 +275,9 @@ nmap <leader>xf :CocCommand explorer<CR>
 Plug '~/.fzf'           " enable fzf which installed by git
 Plug 'junegunn/fzf.vim' " add fzf.vim
 " This is the default extra key bindings
-let g:fzf_action = {
-    \ 'ctrl-t': 'tab split',
-    \ 'ctrl-x': 'split',
-    \ 'ctrl-v': 'vsplit',}
+" let g:fzf_action = {
+"     \ 'ctrl-x': 'split',
+"     \ 'ctrl-v': 'vsplit',}
 " Default fzf layout
 " - down / up / left / right
 let g:fzf_layout = {'down': '~40%'}
@@ -287,7 +286,7 @@ nnoremap <silent> <expr> <Leader>kk (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>"
 " open recent files with fzf
 nnoremap <silent> <leader>rr :History<CR>
 " using Rg with fzf
-nnoremap <silent> <leader>xm :Rg<CR>
+nnoremap <silent> <leader>qq :Rg<CR>
 
 " 3 visual multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
