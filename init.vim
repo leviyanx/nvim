@@ -277,8 +277,6 @@ Plug 'junegunn/fzf.vim' " add fzf.vim
 " Default fzf layout
 " - down / up / left / right
 let g:fzf_layout = {'down': '~40%'}
-" quickly open files with fzf (whether in NERDTree or not)
-nnoremap <silent> <expr> <Leader>kk (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
 " open recent files with fzf
 nnoremap <silent> <leader>rr :History<CR>
 " using Rg with fzf
@@ -350,8 +348,8 @@ nnoremap <silent> <leader>g :LazyGit<CR>
 
 " 11 ranger
 Plug 'kevinhwang91/rnvimr'
-nnoremap <c-o> :RnvimrToggle<CR>
-tnoremap <silent> <c-o> <C-\><C-n>:RnvimrToggle<CR>
+nnoremap <leader>kk :RnvimrToggle<CR>
+tnoremap <silent> <leader>kk <C-\><C-n>:RnvimrToggle<CR>
 " Make Ranger to be hidden after picking a file
 let g:rnvimr_enable_picker = 1
 " Disable a border for floating window
