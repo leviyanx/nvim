@@ -86,6 +86,9 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+" Map kj to ESC (only in insert mode)
+inoremap kj <Esc>
+
 " Map leader to comma
 let mapleader = ","
 let localleader = ","
