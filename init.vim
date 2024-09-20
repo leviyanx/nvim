@@ -153,8 +153,6 @@ noremap ; :
 nnoremap Q :q<CR>
 nnoremap S :w<CR>
 nnoremap <leader>wq :wq<CR>
-" Map kj to ESC (only in insert mode)
-inoremap kj <Esc>
 
 " Open the vimrc file anytime
 nnoremap <leader>ev :e $HOME/.config/nvim/init.vim<CR>
