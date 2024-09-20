@@ -1,3 +1,4 @@
+" ===================== Basic settings ==========================
 " Vim is based on Vi. Setting `nocompatible` switches from the default
 " Vi-compatibility mode and enables useful Vim functionality. This
 " configuration option turns out not to be necessary for the file named " '~/.vimrc', because Vim automatically enters nocompatible mode if that file
@@ -6,8 +7,10 @@
 " `vim -u foo`).
 set nocompatible
 
+"* Set leader key to comma
+let mapleader = ","
+let localleader = ","
 
-" ===================== Specific platform setting ================
 " Determinte environment we are runnning on(Win or Linux or Darwin) 
 function! WhichEnv() abort
     if has('win64') || has('win32') || has('win16')
@@ -19,25 +22,6 @@ endfunction
 " Execuate this function only once to reduce start time
 let env = WhichEnv()
 
-if env == 'DARWIN'
-    " MacOS
-    " Set python
-    let g:python_host_skip_check = 1 " skip check to speed up loading
-    let g:python_host_prog='/usr/bin/python'
-    let g:python3_host_skip_check = 1 " skip check to speed up loading
-    let g:python3_host_prog='/usr/bin/python3'
-    " racer cmd path
-    let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
-elseif env == "WINDOWS"
-    " Set python
-    " racer cmd path
-    " let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
-elseif env == "Linux"
-    let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
-endif
-
-
-" ===================== Basic settings ==========================
 " disable swap file
 set noswapfile
 
@@ -144,20 +128,11 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
-" Map leader to comma
-let mapleader = ","
-let localleader = ","
-
 " Quick operation
 noremap ; :
 nnoremap Q :q<CR>
 nnoremap S :w<CR>
 nnoremap <leader>wq :wq<CR>
-
-" Open the vimrc file anytime
-nnoremap <leader>ev :e $HOME/.config/nvim/init.vim<CR>
-" Open the zshrc file anytime
-nnoremap <leader>ez :e $HOME/.zshrc<CR>
 
 " Split screening
 set splitbelow
@@ -182,6 +157,22 @@ nnoremap <leader>fp :let @*=expand("%:t")<CR>
 vnoremap <leader>ss y/\V<C-r>=escape(@",'/\')<CR><CR>
 " search visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+
+" ===================== Specific platform setting ================
+if env == 'WINDOWS'
+    nnoremap <leader>ev :e $HOME/AppData/Local/nvim/init.vim<CR>
+else
+    " 'DARWIN' or 'Linux' 
+    " Set python
+    let g:python_host_skip_check = 1 " skip check to speed up loading
+    let g:python_host_prog='/usr/bin/python'
+    let g:python3_host_skip_check = 1 " skip check to speed up loading
+    let g:python3_host_prog='/usr/bin/python3'
+
+    nnoremap <leader>ev :e $HOME/.config/nvim/init.vim<CR>
+    nnoremap <leader>ez :e $HOME/.zshrc<CR>
+endif
 
 
 " ======================== Vim Plug ==============================
