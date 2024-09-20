@@ -6,8 +6,9 @@
 " `vim -u foo`).
 set nocompatible
 
-" Functions
-" 1. Determinte environment we are runnning on(Win or Linux or Darwin) 
+
+" ===================== Specific platform setting ================
+" Determinte environment we are runnning on(Win or Linux or Darwin) 
 function! WhichEnv() abort
     if has('win64') || has('win32') || has('win16')
         return 'WINDOWS'
@@ -18,7 +19,25 @@ endfunction
 " Execuate this function only once to reduce start time
 let env = WhichEnv()
 
+if env == 'DARWIN'
+    " MacOS
+    " Set python
+    let g:python_host_skip_check = 1 " skip check to speed up loading
+    let g:python_host_prog='/usr/bin/python'
+    let g:python3_host_skip_check = 1 " skip check to speed up loading
+    let g:python3_host_prog='/usr/bin/python3'
+    " racer cmd path
+    let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
+elseif env == "WINDOWS"
+    " Set python
+    " racer cmd path
+    " let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
+elseif env == "Linux"
+    let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
+endif
 
+
+" ===================== Basic settings ==========================
 " disable swap file
 set noswapfile
 
@@ -72,8 +91,10 @@ set mouse+=a
 
 " highlight current line
 set cursorline 
+
 " highlight matching [{()}]j
 set showmatch   
+
 " visual autocomplete for command menu
 set wildmenu    
 
@@ -103,7 +124,8 @@ autocmd FileType make setlocal noexpandtab
 set clipboard=unnamed
 
 "* lines to cursor
-set scrolloff=5 
+set scrolloff=8
+
 
 " =========================== Basic Mapping ================================
 " Try to prevent bad habits like using the arrow keys for movement. This is
@@ -138,6 +160,7 @@ inoremap kj <Esc>
 nnoremap <leader>ev :e $HOME/.config/nvim/init.vim<CR>
 " Open the zshrc file anytime
 nnoremap <leader>ez :e $HOME/.zshrc<CR>
+
 " Split screening
 set splitbelow
 set splitright
@@ -162,25 +185,6 @@ vnoremap <leader>ss y/\V<C-r>=escape(@",'/\')<CR><CR>
 " search visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-
-" Specific platform setting
-if env == 'DARWIN'
-    " MacOS
-    " Set python
-    let g:python_host_skip_check = 1 " skip check to speed up loading
-    let g:python_host_prog='/usr/bin/python'
-    let g:python3_host_skip_check = 1 " skip check to speed up loading
-    let g:python3_host_prog='/usr/bin/python3'
-    " racer cmd path
-    let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
- 
-elseif env == "WINDOWS"
-    " Set python
-    " racer cmd path
-    " let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
-elseif env == "Linux"
-    let cross_platform_racer_cmd = "/User/leviyan/.cargo/bin/racer"
-endif
 
 " ======================== Vim Plug ==============================
 call plug#begin('$HOME/.config/nvim/plugged')
@@ -225,7 +229,7 @@ Plug 'tpope/vim-surround'
 " Dracula-theme, OneDark, everforest, gruvbox-material
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
-" -----------------------------
+" ----------------------------------
 " Line Plugin: airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -304,34 +308,39 @@ inoremap <silent><expr> <c-o> coc#refresh()
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" ======================== coc-diagnostic ==============================
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call ShowDocumentation()<CR>
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-" Show docs
+
 function! ShowDocumentation()
+  " Show docs
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
   else
     call feedkeys('K', 'in')
   endif
 endfunction
+
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -344,8 +353,10 @@ augroup end
 " Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+
 " Run the Code Lens action on te current line.
 nmap <leader>cl  <Plug>(coc-codelens-action)
+
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
@@ -353,6 +364,7 @@ inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float
 inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+
 
 " ======================== coc-explorer ============================
 nmap <leader>xf :CocCommand explorer<CR>
@@ -385,13 +397,6 @@ nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
 nmap <leader>4 <Plug>AirlineSelectTab4
 nmap <leader>5 <Plug>AirlineSelectTab5
-
-
-
-" ======================== lsp ==================================
-" ======================== rust =================================
-let g:rustfmt_autosave = 1 " automatically formatted for standard style
-
 
 
 " ======================== commentary ============================
@@ -428,11 +433,11 @@ let g:rnvimr_action = {
             \ }
 
 
-" ======================== undotree ==============================
-nnoremap <F5> :UndotreeToggle<CR>
-
-
 " ======================== vim-terminal-help =====================
 let g:terminal_key = '<c-t>'
 " toggle insert/normal mode in terminal
 tnoremap <C-N> <C-\><C-N>
+
+
+" ======================== undotree ==============================
+nnoremap <F5> :UndotreeToggle<CR>
