@@ -146,10 +146,11 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
-" nnoremap ,wh <C-W>h
-" nnoremap ,wl <C-W>l
-" nnoremap ,wj <C-W>j
-" nnoremap ,wk <C-W>k
+" keep the old mapping that moves window
+nnoremap ,wh <C-W>h
+nnoremap ,wl <C-W>l
+nnoremap ,wj <C-W>j
+nnoremap ,wk <C-W>k
 
 " copy file name/path of current buffer in vim to system clipboard
 " full path
