@@ -24,6 +24,7 @@ let env = WhichEnv()
 
 
 set noswapfile      " disable swap file
+set nobackup        " 不创建备份文件
 set bufhidden=hide  " 当buffer被丢弃的时候隐藏它
 
 set number          " Show line numbers.
