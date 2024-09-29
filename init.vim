@@ -46,9 +46,9 @@ set scrolloff=8 " 光标距离上/下多少行时移动屏幕
 
 set matchtime=2 " 短暂跳转到匹配括号的时间
 
-set magic " 设置魔术
-
+set magic       " 设置魔术
 set smartindent " 开启新行时使用智能自动缩进
+set autochdir   " 自动切换当前目录为当前文件所在的目录
 
 set backspace=indent,eol,start " 不设定在插入状态无法用退格键和 Delete 键删除回车符
 
