@@ -22,34 +22,35 @@ endfunction
 " Execuate this function only once to reduce start time
 let env = WhichEnv()
 
-" disable swap file
-set noswapfile
 
-" Turn on syntax highlighting.
-syntax on
+set noswapfile      " disable swap file
+set bufhidden=hide  " 当buffer被丢弃的时候隐藏它
 
-" Disable the default Vim startup message.
-set shortmess+=I
+set number          " Show line numbers.
+set relativenumber  " This enables relative line numbering mode. 
 
-" Show line numbers.
-set number
+syntax on       " Turn on syntax highlighting.
+set incsearch   " Enble searching as you type, rather than waiting till you press enter.
+set hlsearch    " highlight matches
+set showmatch   " highlight matching [{()}]j
+set cursorline  " highlight current line
 
-" This enables relative line numbering mode. With both number and
-" relativenumber enabled, the current line shows the true line number, while
-" all other lines (above and below) are numbered relative to the current line.
-" This is useful because you can tell, at a glance, what count is needed to
-" jump up or down to a particular line, by {count}k to go up or {count}j to go
-" down.
-set relativenumber
+set noerrorbells    " 关闭错误信息响铃
+set novisualbell    " 关闭使用可视响铃代替呼叫
 
-" Always show the status line at the bottom, even if you only have one window open.
-set laststatus=2
+set shortmess+=I " Disable the default Vim startup message.
 
-" The backspace key has slightly unintuitive behavior by default. For example,
-" by default, you can't backspace before the insertion point set with 'i'.
-" This configuration makes backspace behave more reasonably, in that you can
-" backspace over anything.
-set backspace=indent,eol,start
+set clipboard=unnamed " 连通vim和系统剪切板
+
+set scrolloff=8 " 光标距离上/下多少行时移动屏幕
+
+set matchtime=2 " 短暂跳转到匹配括号的时间
+
+set magic " 设置魔术
+
+set smartindent " 开启新行时使用智能自动缩进
+
+set backspace=indent,eol,start " 不设定在插入状态无法用退格键和 Delete 键删除回车符
 
 " By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
 " shown in any window) that has unsaved changes. This is to prevent you from "
@@ -64,20 +65,11 @@ set hidden
 set ignorecase
 set smartcase
 
-" Enble searching as you type, rather than waiting till you press enter.
-set incsearch
-" highlight matches
-set hlsearch
+set mouse+=a " Enable mouse support.
 
-" Enable mouse support. You should avoid relying on this too much, but it can
-" sometimes be convenient.
-set mouse+=a
-
-" highlight current line
-set cursorline 
-
-" highlight matching [{()}]j
-set showmatch   
+set ruler           " 打开状态栏标尺
+set laststatus=2    " 显示状态栏 (默认值为 1, 无法显示状态栏)
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ Ln\ %l,\ Col\ %c/%L%) " 设置在状态行显示的信息
 
 " visual autocomplete for command menu
 set wildmenu    
@@ -104,12 +96,12 @@ set expandtab               " On pressing tab, insert 4 spaces
 " Not extend tab to 4 spaces in Makefile
 autocmd FileType make setlocal noexpandtab
 
-"* Make vim PASTE from (and copy to) system's clipboard
-set clipboard=unnamed
-
-"* lines to cursor
-set scrolloff=8
-
+set foldenable          " 开始折叠
+set foldmethod=syntax   " 设置语法折叠
+set foldcolumn=0        " 设置折叠区域的宽度
+set foldlevel=1         " 设置折叠层数为1
+" 用空格键来开关折叠
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR> 
 
 " =========================== Basic Mapping ================================
 " Try to prevent bad habits like using the arrow keys for movement. This is
