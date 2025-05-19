@@ -16,23 +16,16 @@ vim.g.localleader = ","
 -- 快速应用配置修改
 vim.keymap.set('n', '<leader>ss', ':vs $MYVIMRC<CR>:source $MYVIMRC<CR>:q <CR>', { silent = true, desc = "应用新配置" })
 
+-- 不鼓励使用方向键进行移动
 -- 定义一个函数，用于提示用户使用 h/j/k/l 进行移动
 local function notify_use_hjkl()
   vim.notify("请使用 h/j/k/l 进行移动", vim.log.levels.WARN, { title = "导航提示" })
 end
-
--- 不鼓励使用方向键进行移动
+-- normal模式下，禁止方向键进行移动
 vim.keymap.set('n', '<Left>', notify_use_hjkl, { desc = "提示: 使用 h" })
 vim.keymap.set('n', '<Right>', notify_use_hjkl, { desc = "提示: 使用 l" })
 vim.keymap.set('n', '<Up>', notify_use_hjkl, { desc = "提示: 使用 k" })
 vim.keymap.set('n', '<Down>', notify_use_hjkl, { desc = "提示: 使用 j" })
--- 将函数暴露给全局，以便 <Esc>:lua 调用 (init 是文件名)
-_G.notify_use_hjkl = notify_use_hjkl
--- 在插入模式下，按下方向键会先退出插入模式，然后提示，再回到插入模式
-vim.keymap.set('i', '<Left>', '<Esc>:lua notify_use_hjkl()<CR>a', { desc = "提示: 使用 h" })
-vim.keymap.set('i', '<Right>', '<Esc>:lua notify_use_hjkl()<CR>a', { desc = "提示: 使用 l" })
-vim.keymap.set('i', '<Up>', '<Esc>:lua notify_use_hjkl()<CR>a', { desc = "提示: 使用 k" })
-vim.keymap.set('i', '<Down>', '<Esc>:lua notify_use_hjkl()<CR>a', { desc = "提示: 使用 j" })
 
 -- 多窗口操作
 -- 窗口分屏操作
