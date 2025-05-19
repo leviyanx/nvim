@@ -33,5 +33,6 @@ vim.opt.rtp:prepend(lazypath)
 -- 管理插件
 return require('lazy').setup({
     -- 主题
-    'Mofiqul/vscode.nvim'
+    'Mofiqul/vscode.nvim',      -- 对眼睛更友好
+    'folke/tokyonight.nvim',    -- 对比度更高一点
 })
