@@ -12,8 +12,6 @@ vim.opt.compatible = false
 
 -- 设置文件编码格式为 utf-8
 vim.g.encoding = "utf-8"
--- 设置终端编码格式为 utf-8
-vim.o.termencoding = "utf-8"
 
 vim.opt.swapfile = false        -- 禁用交换文件
 vim.opt.backup = false          -- 不创建备份文件
@@ -27,7 +25,7 @@ vim.o.list = true               -- 显示空白字符
 vim.opt.termguicolors = true
 
 -- 高亮
-vim.cmd('syntax on')            -- 打开语法高亮 (对于 Neovim，Treesitter 是更推荐的语法高亮引擎)
+vim.o.syntax = "enable"         -- 打开语法高亮
 vim.opt.hlsearch = true         -- 高亮所有搜索匹配项
 vim.opt.showmatch = true        -- 高亮匹配的括号 ([{()}])
 vim.opt.cursorline = true       -- 高亮显示当前行
