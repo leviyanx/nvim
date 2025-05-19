@@ -35,4 +35,8 @@ return require('lazy').setup({
     -- 主题
     'Mofiqul/vscode.nvim',      -- 对眼睛更友好
     'folke/tokyonight.nvim',    -- 对比度更高一点
+    {
+        'nvim-tree/nvim-tree.lua',
+        dependencies = 'nvim-tree/nvim-web-devicons', -- optional
+    }
 })
