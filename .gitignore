@@ -6,6 +6,7 @@
 !README.md
 # nvim settings
 !init.vim
+!init.lua
 # coc settings
 !coc-settings.json
 
@@ -14,3 +15,5 @@
 # "/" is NOT optional when followed by a *
 # nvim plug-vim
 !autoload/plug.vim
+!lua
+!archive
