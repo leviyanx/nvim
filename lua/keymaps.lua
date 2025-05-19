@@ -14,8 +14,7 @@ vim.g.localleader = ","
 -- =========================================================================
 
 -- 快速应用配置修改
-vim.keymap.set('n', '<leader>ee', ':vs $MYVIMRC<CR>', { silent = true })
-vim.keymap.set('n', '<leader>ss', ':source $MYVIMRC<CR>:q <CR>', { silent = true})
+vim.keymap.set('n', '<leader>ss', ':vs $MYVIMRC<CR>:source $MYVIMRC<CR>:q <CR>', { silent = true, desc = "应用新配置" })
 
 -- 定义一个函数，用于提示用户使用 h/j/k/l 进行移动
 local function notify_use_hjkl()
