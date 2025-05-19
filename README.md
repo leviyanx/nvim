@@ -2,9 +2,12 @@ This repo is used to store configs for neovim.
 
 [New]
 
-配置的前置要求
-1. Neovim >= 0.8.0 (needs to be built with LuaJIT)
-1. lazy插件需要luarocks
+配置使用前提
+1. neovim版本需要 >= 0.8.0
+    1. `vim.keymap.set` 需要 neovim >= 0.7
+    2. lazy.nvim 需要 neovim >= 0.8
+2. 外部软件
+    1. lazy.nvim插件需要luarocks
 
 ---
 [Old]
