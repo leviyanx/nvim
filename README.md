@@ -1,5 +1,13 @@
 This repo is used to store configs for neovim.
 
+[New]
+
+配置的前置要求
+1. Neovim >= 0.8.0 (needs to be built with LuaJIT)
+1. lazy插件需要luarocks
+
+---
+[Old]
 Required environment
 
 1. python3
