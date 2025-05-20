@@ -13,8 +13,8 @@ vim.g.localleader = ","
 -- 基础键盘映射
 -- =========================================================================
 
--- 快速应用配置修改
-vim.keymap.set('n', '<leader>ss', ':vs $MYVIMRC<CR>:source $MYVIMRC<CR>:q <CR>', { silent = true, desc = "应用新配置" })
+-- 快速应用修改后的配置
+vim.keymap.set('n', '<leader>sq', ':vs $MYVIMRC<CR>:source $MYVIMRC<CR>:q <CR>', { silent = true, desc = "应用新配置" })
 
 -- 不鼓励使用方向键进行移动
 -- 定义一个函数，用于提示用户使用 h/j/k/l 进行移动

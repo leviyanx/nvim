@@ -16,4 +16,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- 打开/关闭nvim tree
-vim.keymap.set('n', '<leader>xf', ':NvimTreeToggle<CR>', { silent = true })
+vim.keymap.set('n', '<leader>tb', ':NvimTreeToggle<CR>', { silent = true })
