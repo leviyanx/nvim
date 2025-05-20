@@ -17,13 +17,13 @@ if not vim.loop.fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
     local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
     if vim.v.shell_error ~= 0 then
-      vim.api.nvim_echo({
-        { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-        { out, "WarningMsg" },
-        { "\nPress any key to exit..." },
-      }, true, {})
-      vim.fn.getchar()
-      os.exit(1)
+        vim.api.nvim_echo({
+            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+            { out, "WarningMsg" },
+            { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
     end
 end
 
@@ -33,8 +33,9 @@ vim.opt.rtp:prepend(lazypath)
 -- 管理插件
 return require('lazy').setup({
     -- 主题
-    'Mofiqul/vscode.nvim',      -- 对眼睛更友好
+    'Mofiqul/vscode.nvim',      -- 对眼睛更友好，但深色模式显示效果差
     'folke/tokyonight.nvim',    -- 对比度更高一点
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- 文件列表
     {
         'nvim-tree/nvim-tree.lua',

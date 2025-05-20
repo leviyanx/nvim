@@ -21,7 +21,7 @@ vim.opt.hidden = true           -- 允许隐藏有未保存更改的缓冲区 (�
 -- 显示
 vim.opt.number = true           -- 显示行号
 vim.opt.relativenumber = true   -- 显示相对行号
-vim.o.list = true               -- 显示空白字符
+vim.opt.list = true             -- 显示空白字符
 vim.opt.termguicolors = true
 
 -- 高亮
@@ -48,12 +48,12 @@ vim.opt.laststatus = 2
 
 -- 光标形状 (Neovim 更现代化的设置方式)
 vim.opt.guicursor = table.concat({
-  "n-v-c:block",        -- 普通、可视、命令模式：块状光标
-  "i-ci-ve:ver25",      -- 插入、命令行插入、可视表达式模式：垂直细线光标 (25% 高度)
-  "r-cr:hor20",         --替换、命令行替换模式：水平细线光标 (20% 宽度)
-  "o:hor50",            -- 操作符待决模式：水平细线光标 (50% 宽度)
-  "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor", -- 所有模式：光标闪烁设置
-  "sm:block-blinkwait175-blinkoff150-blinkon175" -- ShowMatch 模式：块状光标，不同闪烁率
+    "n-v-c:block",        -- 普通、可视、命令模式：块状光标
+    "i-ci-ve:ver25",      -- 插入、命令行插入、可视表达式模式：垂直细线光标 (25% 高度)
+    "r-cr:hor20",         --替换、命令行替换模式：水平细线光标 (20% 宽度)
+    "o:hor50",            -- 操作符待决模式：水平细线光标 (50% 宽度)
+    "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor", -- 所有模式：光标闪烁设置
+    "sm:block-blinkwait175-blinkoff150-blinkon175" -- ShowMatch 模式：块状光标，不同闪烁率
 }, ",")
 -- 如果您的特定终端必须使用 t_SI/t_EI (旧方法):
 -- vim.opt.t_SI = "\x1b[6 q" -- 插入模式光标形状 (例如，变为竖线)
@@ -84,9 +84,9 @@ vim.opt.expandtab = true        -- 按 <Tab> 键时插入空格而不是制表�
 vim.opt.smartindent = true      -- 开启新行时使用智能自动缩进
 -- 对 Makefile 文件禁用 expandtab (即使用真实的 Tab 字符)
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "make",
-  command = "setlocal noexpandtab", -- setlocal 只对当前缓冲区生效
-  desc = "Makefile 使用真实 Tab",
+    pattern = "make",
+    command = "setlocal noexpandtab", -- setlocal 只对当前缓冲区生效
+    desc = "Makefile 使用真实 Tab",
 })
 -- << >> 缩进时移动的长度
 vim.opt.shiftwidth = 4
