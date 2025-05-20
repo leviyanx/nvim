@@ -1,6 +1,6 @@
 require('nvim-treesitter').setup({
     -- 支持的语言
-    ensure_installed = {'c', 'cpp', 'python', 'java', 'lua', 'javascript', 'typescript', 'html', 'css', 'markdown', 'markdown_inline' },
+    ensure_installed = {'c', 'cpp', 'python', 'java', 'lua', 'javascript', 'typescript', 'html', 'css', 'markdown', 'markdown_inline', 'json' },
     -- 启动代码高亮
     highlight = {
         enable = true,
@@ -25,7 +25,8 @@ require('nvim-treesitter').setup({
 -- 每次保存，自动格式化代码
 local auto_indent = vim.api.nvim_create_augroup('AUTO_INDENT', {clear = true })
 vim.api.nvim_create_autocmd({'BufWritePost'}, {
-    pattern = '*',
+    -- 指定需要格式化的文件类型
+    pattern = {'*.lua', '*.cpp', '*.c', '*.h', '*.hpp', '*.py', '*.java', '*.js', '*.ts', '*.go', '*.rs', '*.json'},
     group = auto_indent,
     command = 'normal! gg=G``'
 })
