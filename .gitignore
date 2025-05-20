@@ -15,5 +15,6 @@
 # "/" is NOT optional when followed by a *
 # nvim plug-vim
 !autoload/plug.vim
+!ftplugin
 !lua
 !archive
