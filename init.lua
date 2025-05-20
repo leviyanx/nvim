@@ -11,6 +11,7 @@ require('plugin-config/theme-vscode')
 require('plugin-config/nvimtree')
 require('plugin-config/lualine')
 require('plugin-config/whichkey')
+require('plugin-config/toggleterm')
 
 -- 启用主题
 vim.cmd[[colorscheme vscode]]

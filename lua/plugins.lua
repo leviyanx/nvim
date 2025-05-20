@@ -46,5 +46,8 @@ return require('lazy').setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     -- 快捷键提示
-    "folke/which-key.nvim"
+    "folke/which-key.nvim",
+    -- terminal
+    {'akinsho/toggleterm.nvim', version = '*', config = true},
+    
 })
