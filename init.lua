@@ -9,6 +9,7 @@ require('plugin-config/tokyonight')
 require('plugin-config/theme-vscode')
 -- 启用插件
 require('plugin-config/nvimtree')
+require('plugin-config/lualine')
 
 -- 启用主题
 vim.cmd[[colorscheme vscode]]
