@@ -49,5 +49,12 @@ return require('lazy').setup({
     "folke/which-key.nvim",
     -- terminal
     {'akinsho/toggleterm.nvim', version = '*', config = true},
+    -- 模糊搜索
+    -- telescope, telescope-file-browser: neovim >= 0.9
+    {
+        'nvim-telescope/telescope.nvim', version = '0.1.8',
+        dependencies = 'nvim-lua/plenary.nvim'
+    },
+    'nvim-telescope/telescope-file-browser.nvim',
     
 })
