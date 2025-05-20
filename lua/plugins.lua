@@ -44,5 +44,7 @@ return require('lazy').setup({
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
-    }
+    },
+    -- 快捷键提示
+    "folke/which-key.nvim"
 })
