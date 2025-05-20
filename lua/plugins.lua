@@ -56,5 +56,6 @@ return require('lazy').setup({
         dependencies = 'nvim-lua/plenary.nvim'
     },
     'nvim-telescope/telescope-file-browser.nvim',
-    
+    -- 编程语言语法高亮
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
 })

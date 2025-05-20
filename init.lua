@@ -13,6 +13,7 @@ require('plugin-config/lualine')
 require('plugin-config/whichkey')
 require('plugin-config/toggleterm')
 require('plugin-config/telescope')
+require('plugin-config/treesitter')
 
 -- 启用主题
 vim.cmd[[colorscheme vscode]]
