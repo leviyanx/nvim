@@ -58,5 +58,14 @@ return require('lazy').setup({
     },
     'nvim-telescope/telescope-file-browser.nvim',
     -- 编程语言语法高亮
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    -- lsp
+    'neovim/nvim-lspconfig',
+    {
+        -- 快速安装不同语言的lsp的服务端
+        'williamboman/mason.nvim',
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+        }
+    },
 })

@@ -9,6 +9,7 @@ This repo is used to store configs for neovim.
     3. lualine.nvim: neovim >= 0.7
     4. telescope.nvim: neovim >= 0.9
     5. nvim-treesitter.nvim: neovim >= 0.10
+    6. nvim-lspconfig.nvim: neovim >= 0.10
 2. 外部软件
     1. lazy.nvim插件需要luarocks
     2. telescope.nvim需要ripgrep
