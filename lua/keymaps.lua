@@ -19,7 +19,7 @@ vim.keymap.set('n', '<leader>sq', ':vs $MYVIMRC<CR>:source $MYVIMRC<CR>:q <CR>',
 -- 不鼓励使用方向键进行移动
 -- 定义一个函数，用于提示用户使用 h/j/k/l 进行移动
 local function notify_use_hjkl()
-  vim.notify("请使用 h/j/k/l 进行移动", vim.log.levels.WARN, { title = "导航提示" })
+    vim.notify("请使用 h/j/k/l 进行移动", vim.log.levels.WARN, { title = "导航提示" })
 end
 -- normal模式下，禁止方向键进行移动
 vim.keymap.set('n', '<Left>', notify_use_hjkl, { desc = "提示: 使用 h" })
@@ -47,8 +47,3 @@ vim.keymap.set('n', 'Q', ':q<CR>', { noremap = true, silent = true, desc = "退�
 vim.keymap.set('n', 'S', ':w<CR>', { noremap = true, silent = true, desc = "保存" })
 -- dw删除当前光标所在单词
 vim.api.nvim_set_keymap("n", "dw", "diw", {noremap = true, silent = true})
-
-
--- 使用空格键来切换折叠状态 (za 是更简单且常用的方式)
-vim.keymap.set('n', '<Space>', 'za', { silent = true, desc = "切换代码折叠" })
-

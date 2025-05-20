@@ -73,13 +73,6 @@ vim.opt.matchtime = 2           -- 短暂跳转到匹配括号的时间，单位
 
 vim.opt.autochdir = false       -- 自动切换当前目录为当前文件所在的目录 (有时可能会分散注意力，可以考虑基于项目的解决方案)
 
--- 代码折叠设置
-vim.opt.foldenable = true       -- 启用代码折叠
-vim.opt.foldmethod = 'syntax'   -- 设置折叠方法为基于语法 (也可以考虑 'indent' 或配合插件使用 'expr')
-vim.opt.foldcolumn = '0'        -- 设置折叠区域的宽度 (可以设为 '1' 以显示折叠标记)
-vim.opt.foldlevel = 99          -- 初始折叠级别，99 表示默认展开所有折叠
-vim.opt.foldlevelstart = 99     -- 打开文件时应用的折叠级别
-
 -- insert操作
 vim.opt.backspace = 'indent,eol,start' -- 允许在插入模式下使用退格键删除缩进、换行符和插入开始位置之前的内容
 
