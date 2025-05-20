@@ -1,5 +1,5 @@
 require('toggleterm').setup({
-    open_mapping = [[<C-\>]],
+    open_mapping = [[<C-t>]],
     -- 打开新终端后自动进入插入模式
     start_in_insert = true,
     -- 在当前buffer的下方打开新终端
