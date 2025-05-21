@@ -1,5 +1,5 @@
 require('options')
-require('keymaps')
+require('keymappings')
 require('autocmd')
 
 -- 安装插件
@@ -17,3 +17,6 @@ require('plugin-config/telescope')
 require('plugin-config/treesitter')
 require('plugin-config/mason')
 require('plugin-config/cmp')
+
+-- 加载LSP配置
+require('lsp/lua')
