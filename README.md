@@ -20,6 +20,25 @@ This repo is used to store configs for neovim.
         2. 安装方式：https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#various-download-options-for-fonts。推荐hack字体。
         3. 设置Terminal使用该字体
 
+使用配置方法
+1. 将仓库clone到下列路径
+    * Win: ~/AppData/Local/nvim
+    * Linux/MacOS: ~/.config/nvim
+2. 打开nvim
+
+lsp支持
+1. nvim-lspconfig.nvim lsp配置支持
+2. mason.nvim, mason-lspconfig.nvim 快速安装不同语言lsp服务端
+    1. nvim/lua/plugin-config/mason.lua 指定要安装的lsp服务端，会自动安装 
+3. nvim/lua/lsp/ lsp关于特定语言(如lua)的配置（需要于init.lua中引用）
+
+特别说明：nvim/ftplugin/*.lua 特定文件类型定义局部于缓冲区的设置和行为，此处配置执行时间较晚，在neovim检测到文件类型后才会加载，不能用作加载lsp关于指定语言的接口。
+
+dap支持
+
+参考
+1. 专栏 [零基础 vim 配置](https://blog.csdn.net/lanuage/category_11901740.html)
+
 ---
 [Old]
 Required environment
