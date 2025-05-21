@@ -82,5 +82,7 @@ return require('lazy').setup({
     -- lspkind
     'onsails/lspkind-nvim',
     -- LSP美化
-    'glepnir/lspsaga.nvim'
+    'glepnir/lspsaga.nvim',
+    -- symbols outline
+    'simrat39/symbols-outline.nvim'
 })
