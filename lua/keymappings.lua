@@ -60,13 +60,14 @@ lsp_keymappings.set_keymap = function(bufnr)
     vim.keymap.set('n', 'grn', '<cmd>Lspsaga rename<CR>', {buffer = bufnr, silent = true, desc = '重命名变量'})
 
     -- 以浮窗形式显示错误
-    vim.keymap.set("n", "go", "<cmd>Lspsaga show_buf_diagnostics ++unfocus<CR>", {buffer = bufnr, silent = true, desc = '打开诊断（float）'})
-    vim.keymap.set("n", "<leader>go", "<cmd>Lspsaga show_buf_diagnostics ++normal<CR>", {buffer = bufnr, silent = true, desc = '打开诊断（normal）'})
+    vim.keymap.set("n", "go", "<cmd>Lspsaga show_buf_diagnostics<CR>", {buffer = bufnr, silent = true, desc = '打开诊断'})
+    vim.keymap.set("n", "<leader>go", "<cmd>Lspsaga show_buf_diagnostics ++unfocus<CR>", {buffer = bufnr, silent = true, desc = '打开诊断（unfocus）'})
     vim.keymap.set("n", "gn", "<cmd>Lspsaga diagnostic_jump_next<CR>", {buffer = bufnr, silent = true, desc = '下一个诊断'})
     vim.keymap.set("n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", {buffer = bufnr, silent = true, desc = '上一个诊断'})
     vim.keymap.set("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", {buffer = bufnr, silent = true, desc = '显示行错误诊断'})
     vim.keymap.set("v", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", {buffer = bufnr, silent = true, desc = '显示行错误诊断'})
-    vim.keymap.set("v", "<leader>ca", "<cmd>Lspsaga code_action<CR>", {buffer = bufnr, silent = true, desc = '错误修改建议'})
+    vim.keymap.set("n", "gc", "<cmd>Lspsaga code_action<CR>", {buffer = bufnr, silent = true, desc = '错误修改建议'})
+    vim.keymap.set("v", "gc", "<cmd>Lspsaga code_action<CR>", {buffer = bufnr, silent = true, desc = '错误修改建议'})
 end
 
 return lsp_keymappings
