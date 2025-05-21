@@ -1,11 +1,12 @@
-local lsp_set_keymap = require("keymappings")
+local lsp_keymappings = require("keymappings")
 -- 定义快捷键
 -- 根据官方的提示，这里我们使用 on_attach 表示当前缓冲加载服务端完成之后调用
 local on_attach = function(_, bufnr)
-    lsp_set_keymap.set_keymap(bufnr)
+    lsp_keymappings.set_keymap(bufnr)
 end
 
-require('lspconfig').lua_ls.setup {
+require('lspconfig').lua_ls.setup({
+    on_attach = on_attach,
     settings = {
         Lua = {
             runtime = {
@@ -26,6 +27,4 @@ require('lspconfig').lua_ls.setup {
             },
         },
     },
-
-    on_attach = on_attach,
-}
+})
