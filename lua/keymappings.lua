@@ -65,6 +65,7 @@ lsp_keymappings.set_keymap = function(bufnr)
     vim.keymap.set("n", "gn", "<cmd>Lspsaga diagnostic_jump_next<CR>", {buffer = bufnr, silent = true, desc = '下一个诊断'})
     vim.keymap.set("n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", {buffer = bufnr, silent = true, desc = '上一个诊断'})
     vim.keymap.set("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", {buffer = bufnr, silent = true, desc = '显示行错误诊断'})
+    vim.keymap.set("v", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", {buffer = bufnr, silent = true, desc = '显示行错误诊断'})
     vim.keymap.set("v", "<leader>ca", "<cmd>Lspsaga code_action<CR>", {buffer = bufnr, silent = true, desc = '错误修改建议'})
 end
 
