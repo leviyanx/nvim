@@ -81,4 +81,6 @@ return require('lazy').setup({
     'rafamadriz/friendly-snippets',
     -- lspkind
     'onsails/lspkind-nvim',
+    -- LSP美化
+    'glepnir/lspsaga.nvim'
 })

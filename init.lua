@@ -17,6 +17,8 @@ require('plugin-config/telescope')
 require('plugin-config/treesitter')
 require('plugin-config/mason')
 require('plugin-config/cmp')
+require('plugin-config/lspsaga')
 
 -- 加载LSP配置
 require('lsp/lua')
+require('lsp/cpp')
