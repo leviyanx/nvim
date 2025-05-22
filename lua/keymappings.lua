@@ -35,6 +35,11 @@ vim.keymap.set('n', '<leader>x1', '<C-W>o', { desc = "关闭其他所有窗口 (
 vim.keymap.set('n', '<leader>x2', ':split<CR>', { desc = "水平分割窗口" })
 vim.keymap.set('n', '<leader>x3', ':vsplit<CR>', { desc = "垂直分割窗口" })
 vim.keymap.set('n', '<leader>x0', ':q<CR>', { desc = "关闭当前窗口" })
+-- 窗口间移动
+vim.keymap.set('n', '<C-h>', '<C-W>h', { desc = "移动到左侧窗口" })
+vim.keymap.set('n', '<C-l>', '<C-W>l', { desc = "移动到右侧窗口" })
+vim.keymap.set('n', '<C-j>', '<C-W>j', { desc = "移动到下方窗口" })
+vim.keymap.set('n', '<C-k>', '<C-W>k', { desc = "移动到上方窗口" })
 -- <leader> 系列窗口移动快捷键
 vim.keymap.set('n', '<leader>wh', '<C-W>h', { desc = "移动到左侧窗口" })
 vim.keymap.set('n', '<leader>wl', '<C-W>l', { desc = "移动到右侧窗口" })
