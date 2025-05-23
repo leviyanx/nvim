@@ -84,5 +84,7 @@ return require('lazy').setup({
     -- LSP美化
     'glepnir/lspsaga.nvim',
     -- symbols outline
-    'simrat39/symbols-outline.nvim'
+    'simrat39/symbols-outline.nvim',
+    -- git
+    'lewis6991/gitsigns.nvim'
 })

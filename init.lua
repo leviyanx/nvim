@@ -19,6 +19,7 @@ require('plugin-config/mason')
 require('plugin-config/cmp')
 require('plugin-config/lspsaga')
 require('plugin-config/symbols_outline')
+require('plugin-config/gitsigns')
 
 -- 加载LSP配置
 require('lsp/lua')
