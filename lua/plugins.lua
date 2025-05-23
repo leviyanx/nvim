@@ -86,5 +86,6 @@ return require('lazy').setup({
     -- symbols outline
     'simrat39/symbols-outline.nvim',
     -- git
-    'lewis6991/gitsigns.nvim'
+    'lewis6991/gitsigns.nvim',
+    {'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim'},
 })

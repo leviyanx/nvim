@@ -20,6 +20,7 @@ require('plugin-config/cmp')
 require('plugin-config/lspsaga')
 require('plugin-config/symbols_outline')
 require('plugin-config/gitsigns')
+require('plugin-config/diffview')
 
 -- 加载LSP配置
 require('lsp/lua')
