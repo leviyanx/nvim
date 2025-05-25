@@ -62,8 +62,14 @@ return require('lazy').setup({
     -- lsp
     'neovim/nvim-lspconfig',
     -- 快速安装不同语言的lsp的服务端
-    {"mason-org/mason.nvim", version='^1.0.0'},
-    {"mason-org/mason-lspconfig.nvim", version='^1.0.0'},
+    {
+        "mason-org/mason-lspconfig.nvim",
+        dependencies = {
+            "mason-org/mason.nvim",
+            "neovim/nvim-lspconfig"
+        },
+
+    },
     -- 自动补全
     -- nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
