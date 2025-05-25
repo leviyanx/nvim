@@ -88,4 +88,11 @@ return require('lazy').setup({
     -- git
     'lewis6991/gitsigns.nvim',
     {'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim'},
+    -- comments
+    {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('plugin-config/comment').setup()
+        end
+    }
 })
