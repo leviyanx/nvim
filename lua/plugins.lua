@@ -61,13 +61,9 @@ return require('lazy').setup({
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     -- lsp
     'neovim/nvim-lspconfig',
-    {
-        -- 快速安装不同语言的lsp的服务端
-        'williamboman/mason.nvim',
-        dependencies = {
-            "williamboman/mason-lspconfig.nvim",
-        }
-    },
+    -- 快速安装不同语言的lsp的服务端
+    {"mason-org/mason.nvim", version='^1.0.0'},
+    {"mason-org/mason-lspconfig.nvim", version='^1.0.0'},
     -- 自动补全
     -- nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
