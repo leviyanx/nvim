@@ -17,8 +17,6 @@ vim.g.localleader = ","
 -- normal模式
 -- ==========
 
--- 快速应用修改后的配置
-vim.keymap.set('n', '<leader>sq', ':vs $MYVIMRC<CR>:source $MYVIMRC<CR>:q <CR>', { silent = true, desc = "应用新配置" })
 
 
 -- 不鼓励使用方向键进行移动
@@ -52,9 +50,12 @@ vim.keymap.set('n', '<leader>wj', '<C-W>j', { desc = "移动到下方窗口" })
 vim.keymap.set('n', '<leader>wk', '<C-W>k', { desc = "移动到上方窗口" })
 
 -- 快速操作
+-- buffer
 vim.keymap.set({ 'n', 'v', 'o' }, ';', ':', { noremap = true, desc = "进入命令模式" }) -- ; 代替 :
 vim.keymap.set('n', 'Q', ':q<CR>', { noremap = true, silent = true, desc = "退出" })
 vim.keymap.set('n', 'S', ':w<CR>', { noremap = true, silent = true, desc = "保存" })
+vim.keymap.set('n', '<leader>sq', ':vs $MYVIMRC<CR>:source $MYVIMRC<CR>:q <CR>', { silent = true, desc = "应用新配置" })
+-- word
 -- dw删除当前光标所在单词
 vim.api.nvim_set_keymap("n", "dw", "diw", {noremap = true, silent = true})
 
