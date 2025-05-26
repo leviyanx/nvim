@@ -17,8 +17,6 @@ vim.g.localleader = ","
 -- normal模式
 -- ==========
 
-
-
 -- 不鼓励使用方向键进行移动
 -- 定义一个函数，用于提示用户使用 h/j/k/l 进行移动
 local function notify_use_hjkl()
