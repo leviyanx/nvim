@@ -55,6 +55,7 @@ vim.keymap.set({ 'n', 'v', 'o' }, ';', ':', { noremap = true, desc = "进入命�
 vim.keymap.set('n', 'Q', ':q<CR>', { noremap = true, silent = true, desc = "退出" })
 vim.keymap.set('n', 'S', ':w<CR>', { noremap = true, silent = true, desc = "保存" })
 vim.keymap.set('n', '<leader>sq', ':vs $MYVIMRC<CR>:source $MYVIMRC<CR>:q <CR>', { silent = true, desc = "应用新配置" })
+vim.keymap.set('n', '<leader>fp', ':lua vim.fn.setreg("+", vim.fn.expand("%:p")); print("Copied: " .. vim.fn.expand("%:p"))<CR>', { desc = "拷贝当前buffer中文件绝对路径" })
 -- word
 -- dw删除当前光标所在单词
 vim.api.nvim_set_keymap("n", "dw", "diw", {noremap = true, silent = true})
