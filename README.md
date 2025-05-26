@@ -1,4 +1,4 @@
-This repo is used to store configs for neovim.
+本配置目前仅适用Unix-like操作系统。
 
 [New]
 
