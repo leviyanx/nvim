@@ -5,6 +5,7 @@
 neovim安装方法（0.11.x）：
 
 1、MacOS：brew
+
 2、Linux：build from source
 
 ```bash
