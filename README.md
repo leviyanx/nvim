@@ -72,6 +72,7 @@ dap支持
 参考
 
 1. 专栏 [零基础 vim 配置](https://blog.csdn.net/lanuage/category_11901740.html)
+2. [LunarVim](https://github.com/LunarVim/LunarVim)
 
 ---
 
