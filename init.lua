@@ -9,8 +9,6 @@ require('plugins')
 -- require('plugin-config/theme-vscode')
 require('plugin-config/catppuccin')
 -- 启用插件
-require('plugin-config/lualine')
-require('plugin-config/whichkey')
 require('plugin-config/toggleterm')
 require('plugin-config/telescope')
 require('plugin-config/treesitter')

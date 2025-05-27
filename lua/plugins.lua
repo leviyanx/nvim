@@ -65,7 +65,12 @@ return require('lazy').setup({
         opts = require('plugin-config/lualine').opts
     },
     -- 快捷键提示
-    "folke/which-key.nvim",
+    {
+        "folke/which-key.nvim",
+        opts = {},
+        cmd = 'WhichKey',
+        event = 'VeryLazy'
+    },
     -- terminal
     {'akinsho/toggleterm.nvim', version = '*', config = true},
     -- 模糊搜索
