@@ -133,6 +133,13 @@ return require('lazy').setup({
     -- git
     'lewis6991/gitsigns.nvim',
     {
+        -- gitsigns
+        -- 不能用lazy加载
+        'lewis6991/gitsigns.nvim',
+        opts = require('plugin-config/gitsigns').opts,
+    },
+    {
+        -- diffview
         'sindrets/diffview.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
         opts = {},
