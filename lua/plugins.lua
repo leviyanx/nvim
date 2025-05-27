@@ -102,11 +102,6 @@ return require('lazy').setup({
         },
         opts = {}
     },
-    {
-        'nvim-telescope/telescope-file-browser.nvim',
-        opts = {},
-        cmd = 'Telescope'
-    },
     -- 编程语言语法高亮
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     -- lsp
