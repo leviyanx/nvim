@@ -1,5 +1,5 @@
 local lspconfig = require('lspconfig')
-local lsp_keymappings = require("keymappings")
+local lsp_keymappings = require("lsp/keymappings")
 
 local on_attach = function(_, bufnr)
     lsp_keymappings.set_keymap(bufnr)

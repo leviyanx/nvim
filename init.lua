@@ -23,5 +23,6 @@ require('plugin-config/gitsigns')
 require('plugin-config/diffview')
 
 -- 加载LSP配置
+require('lsp/keymappings')
 require('lsp/lua')
 require('lsp/cpp')
