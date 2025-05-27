@@ -1,8 +1,6 @@
--- 禁用netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+local M = {}
 
-require('nvim-tree').setup({
+M.opts = {
     -- 显示dotfiles
     filters = {
         dotfiles = false,
@@ -12,16 +10,20 @@ require('nvim-tree').setup({
     git = {
         enable = true
     }
-})
+}
 
--- 关闭文件时，自动关闭nvim tree
-vim.api.nvim_create_autocmd("BufEnter", {
-    nested = true,
-    callback = function()
-        if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
-            vim.cmd "quit"
+M.configure = function()
+    local nvimTreeGroup = vim.api.nvim_create_augroup("NvimTreeGroup", {clear = true})
+    -- 关闭文件时，自动关闭nvim tree
+    vim.api.nvim_create_autocmd("BufEnter", {
+        group = nvimTreeGroup,
+        nested = true,
+        callback = function()
+            if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+                vim.cmd "quit"
+            end
         end
-    end
-})
+    })
+end
 
-vim.keymap.set('n', '<leader>tb', ':NvimTreeToggle<CR>', { silent = true, desc = '打开/关闭nvim tree' })
+return M

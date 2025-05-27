@@ -38,8 +38,20 @@ return require('lazy').setup({
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- 文件列表
     {
+        -- nvim-tree
         'nvim-tree/nvim-tree.lua',
-        dependencies = 'nvim-tree/nvim-web-devicons', -- optional
+        dependencies = 'nvim-tree/nvim-web-devicons', -- optional, 会随nvim-tree加载
+        cmd = { "NvimTreeToggle", "NvimTreeFindFile", "NvimTreeFocus", "NvimTreeClose" },
+        keys = {
+            {'<leader>tb', '<cmd>NvimTreeToggle<CR>', mode = 'n', silent = true, desc = '打开/关闭nvim tree' }
+        },
+        init = function()
+            -- 禁用netrw
+            vim.g.loaded_netrw = 1
+            vim.g.loaded_netrwPlugin = 1
+        end,
+        opts = require('plugin-config/nvimtree').opts,
+        config = require('plugin-config/nvimtree').configure(),
     },
     -- 状态栏
     {
