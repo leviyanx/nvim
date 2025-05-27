@@ -53,6 +53,11 @@ return require('lazy').setup({
         opts = require('plugin-config/nvimtree').opts,
         config = require('plugin-config/nvimtree').configure(),
     },
+    -- 图标
+    {
+        'nvim-tree/nvim-web-devicons',
+        lazy = true
+    },
     -- 状态栏
     {
         'nvim-lualine/lualine.nvim',
