@@ -31,6 +31,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- 管理插件
+--[[ 1、lazy_loading文档: https://lazy.folke.io/spec/lazy_loading
+Plugins will be lazy-loaded when one of the following is true
+1. The plugin only exists as a dependency in your spec
+2. It has an event, cmd, ft or keys key
+（event中VeryLazy在neovim启动完成且空闲时加载）
+（keys mode默认normal）
+3. config.defaults.lazy == true ]]
+--[[2、说明
+1、init：用于vim.g.*配置
+2、opts：设置setup的table，替代function config() xxx.setup()... end
+3、config：插件setup结束后执行的函数（可用于autocmd，进阶快捷键）
+]]
 return require('lazy').setup({
     -- 主题
     'Mofiqul/vscode.nvim',      -- 对眼睛更友好，但深色模式显示效果差
@@ -87,7 +99,8 @@ return require('lazy').setup({
             {'<leader>mr', '<Cmd>Telescope marks<CR>', silent = true, desc = '打开书签列表'},
             {'<leader>fb', '<Cmd>Telescope file_browser<CR>', silent = true, desc = '打开文件浏览器'},
             {'<leader>fj', '<Cmd>Telescope jumplist<CR>', silent = true, desc = '打开跳转列表'}
-        }
+        },
+        opts = {}
     },
     {
         'nvim-telescope/telescope-file-browser.nvim',
@@ -131,7 +144,6 @@ return require('lazy').setup({
         }
     },
     -- git
-    'lewis6991/gitsigns.nvim',
     {
         -- gitsigns
         -- 不能用lazy加载
