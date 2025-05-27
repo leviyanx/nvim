@@ -130,8 +130,6 @@ return require('lazy').setup({
     -- comments
     {
         'numToStr/Comment.nvim',
-        config = function()
-            require('plugin-config/comment').setup()
-        end
+        opts = require('plugin-config/comment').opts
     }
 })
