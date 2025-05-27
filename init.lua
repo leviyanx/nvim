@@ -14,7 +14,6 @@ require('plugin-config/treesitter')
 require('plugin-config/mason')
 require('plugin-config/cmp')
 require('plugin-config/lspsaga')
-require('plugin-config/symbols_outline')
 require('plugin-config/gitsigns')
 require('plugin-config/diffview')
 

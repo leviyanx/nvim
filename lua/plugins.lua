@@ -123,7 +123,13 @@ return require('lazy').setup({
     -- LSP美化
     'glepnir/lspsaga.nvim',
     -- symbols outline
-    'simrat39/symbols-outline.nvim',
+    {
+        'simrat39/symbols-outline.nvim',
+        opts = {},
+        keys = {
+            {'<leader>so', '<cmd>SymbolsOutline<CR>', silent = true, desc = '打开/关闭symbol outline'}
+        }
+    },
     -- git
     'lewis6991/gitsigns.nvim',
     {'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim'},
