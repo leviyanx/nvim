@@ -61,7 +61,8 @@ return require('lazy').setup({
     -- 状态栏
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        opts = require('plugin-config/lualine').opts
     },
     -- 快捷键提示
     "folke/which-key.nvim",
