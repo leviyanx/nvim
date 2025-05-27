@@ -15,7 +15,6 @@ require('plugin-config/mason')
 require('plugin-config/cmp')
 require('plugin-config/lspsaga')
 require('plugin-config/gitsigns')
-require('plugin-config/diffview')
 
 -- 加载LSP配置
 require('lsp/keymappings')
