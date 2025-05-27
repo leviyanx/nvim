@@ -10,7 +10,6 @@ require('plugins')
 require('plugin-config/catppuccin')
 -- 启用插件
 require('plugin-config/toggleterm')
-require('plugin-config/telescope')
 require('plugin-config/treesitter')
 require('plugin-config/mason')
 require('plugin-config/cmp')
