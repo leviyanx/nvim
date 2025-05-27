@@ -9,7 +9,7 @@ lsp_keymappings.set_keymap = function(bufnr)
     vim.keymap.set('n', 'gD', '<cmd>Lspsaga peek_definition<CR>', {buffer = bufnr, silent = true, desc = '显示声明'})
     vim.keymap.set('n', 'gh', '<cmd>Lspsaga hover_doc<CR>', {buffer = bufnr, silent = true, desc = '显示注释文档'})
     vim.keymap.set('n', 'gi', '<cmd>Lspsaga finder imp<CR>', {buffer = bufnr, silent = true, desc = '跳转到实现'})
-    vim.keymap.set('n', 'grn', '<cmd>Lspsaga rename<CR>', {buffer = bufnr, silent = true, desc = '重命名变量'})
+    vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', {buffer = bufnr, silent = true, desc = '重命名变量'})
 
     -- 以浮窗形式显示错误
     vim.keymap.set("n", "go", "<cmd>Lspsaga show_buf_diagnostics<CR>", {buffer = bufnr, silent = true, desc = '打开诊断'})
