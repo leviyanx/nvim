@@ -100,7 +100,7 @@ return require('lazy').setup({
             {'<leader>fb', '<Cmd>Telescope file_browser<CR>', silent = true, desc = '打开文件浏览器'},
             {'<leader>fj', '<Cmd>Telescope jumplist<CR>', silent = true, desc = '打开跳转列表'}
         },
-        opts = {}
+        opts = require('plugin-config/telescope').opts
     },
     -- 编程语言语法高亮
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
