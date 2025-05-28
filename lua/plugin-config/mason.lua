@@ -13,8 +13,14 @@ require('mason-lspconfig').setup({
         'clangd',
         'lua_ls',
         'pyright',
-        'jsonls'
+        'jsonls',
+        'eslint' -- js, ts
     },
     -- 允许自动安装
-    automatic_installation = true
+    automatic_installation = true,
+    automatic_enable = {
+        'lua_ls',
+        'eslint'
+    }
+
 })

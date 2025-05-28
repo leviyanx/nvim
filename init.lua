@@ -15,6 +15,6 @@ require('plugin-config/mason')
 require('plugin-config/cmp')
 
 -- 加载LSP配置
-require('lsp/keymappings')
 require('lsp/lua')
 require('lsp/cpp')
+require('lsp/typescript')
