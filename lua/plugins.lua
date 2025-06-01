@@ -117,11 +117,24 @@ return require('lazy').setup({
     },
     -- 自动补全
     -- nvim-cmp
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/nvim-cmp',
+    {
+        'hrsh7th/nvim-cmp',
+        events = {"InsertEnter", "CmdlineEnter"},
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline"
+        },
+        opts = {},
+        config = function()
+            require("plugin-config/cmp").setup()
+        end
+    },
+    {'hrsh7th/cmp-nvim-lsp', lazy=true},
+    {'hrsh7th/cmp-buffer', lazy=true},
+    {'hrsh7th/cmp-path', lazy=true},
+    {'hrsh7th/cmp-cmdline', lazy=true},
     -- autopairs
     {
         "windwp/nvim-autopairs",

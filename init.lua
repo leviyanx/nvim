@@ -12,7 +12,6 @@ require('plugin-config/catppuccin')
 require('plugin-config/toggleterm')
 require('plugin-config/treesitter')
 require('plugin-config/mason')
-require('plugin-config/cmp')
 
 -- 加载LSP配置
 require('lsp/lua')
