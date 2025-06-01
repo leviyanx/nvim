@@ -178,6 +178,7 @@ return require('lazy').setup({
     -- comments
     {
         'numToStr/Comment.nvim',
+        event = 'VeryLazy',
         opts = require('plugin-config/comment').opts
     }
 })
