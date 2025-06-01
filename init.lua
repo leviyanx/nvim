@@ -5,8 +5,6 @@ require('autocmd')
 -- 插件
 require('plugins')
 -- 启用主题
--- require('plugin-config/tokyonight')
--- require('plugin-config/theme-vscode')
 require('plugin-config/catppuccin')
 -- 启用插件
 require('plugin-config/toggleterm')

@@ -45,8 +45,6 @@ Plugins will be lazy-loaded when one of the following is true
 ]]
 return require('lazy').setup({
     -- 主题
-    'Mofiqul/vscode.nvim',      -- 对眼睛更友好，但深色模式显示效果差
-    'folke/tokyonight.nvim',    -- 对比度更高一点
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- 文件列表
     {
