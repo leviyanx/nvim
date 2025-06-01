@@ -122,6 +122,13 @@ return require('lazy').setup({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
+    -- autopairs
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        dependencies = { "nvim-treesitter/nvim-treesitter", "hrsh7th/nvim-cmp" },
+        opts = {}
+    },
     -- vsnip
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
