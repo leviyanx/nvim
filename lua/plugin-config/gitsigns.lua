@@ -37,8 +37,9 @@ M.opts = {
     on_attach = function()
         vim.keymap.set('n', 'gp', '<cmd>Gitsigns prev_hunk<CR>', {silent = true, desc = '跳转到上一个修改'})
         vim.keymap.set('n', 'gn', '<cmd>Gitsigns next_hunk<CR>', {silent = true, desc = '跳转到下一个修改'})
-        vim.keymap.set({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>', {silent = true, desc = '暂存修改'})
-        vim.keymap.set({'n', 'v'}, '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>', {silent = true, desc = '撤销暂存的修改'})
+        vim.keymap.set({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>', {silent = true, desc = '重置修改块'})
+        vim.keymap.set({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>', {silent = true, desc = '暂存修改块'})
+        vim.keymap.set({'n', 'v'}, '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>', {silent = true, desc = '撤销暂存的修改块'})
         vim.keymap.set('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>', {silent = true, desc = '预览修改'})
     end
 }
