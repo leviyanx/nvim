@@ -72,7 +72,8 @@ return require('lazy').setup({
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        opts = require('plugin-config/lualine').opts
+        opts = require('plugin-config/lualine').opts,
+        event = "VeryLazy"
     },
     -- 快捷键提示
     {
