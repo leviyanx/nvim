@@ -173,7 +173,7 @@ return require('lazy').setup({
         -- diffview
         'sindrets/diffview.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
-        events = "VeryLazy"
+        event = "VeryLazy"
     },
     -- comments
     {
