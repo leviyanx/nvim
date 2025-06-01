@@ -104,7 +104,7 @@ return require('lazy').setup({
     -- 编程语言语法高亮
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     -- lsp
-    'neovim/nvim-lspconfig',
+    {'neovim/nvim-lspconfig', lazy=true},
     -- 快速安装不同语言的lsp的服务端
     {
         "mason-org/mason-lspconfig.nvim",
@@ -125,7 +125,6 @@ return require('lazy').setup({
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline"
         },
-        opts = {},
         config = function()
             require("plugin-config/cmp").setup()
         end
@@ -142,9 +141,9 @@ return require('lazy').setup({
         opts = {}
     },
     -- vsnip
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip',
-    'rafamadriz/friendly-snippets',
+    {'hrsh7th/cmp-vsnip', lazy=true},
+    {'hrsh7th/vim-vsnip', lazy=true},
+    {'rafamadriz/friendly-snippets', lazy=true},
     -- lspkind
     'onsails/lspkind-nvim',
     -- LSP美化
@@ -174,7 +173,6 @@ return require('lazy').setup({
         -- diffview
         'sindrets/diffview.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
-        opts = {},
         events = "VeryLazy"
     },
     -- comments
