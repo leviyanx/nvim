@@ -16,5 +16,15 @@ if vim.fn.has "nvim-0.7" then
             vim.o.path = vim.o.path .. ",**/*"
         end
     })
+
+    -- 每次保存，自动格式化代码
+    -- require treesitter
+    local auto_indent = vim.api.nvim_create_augroup('AUTO_INDENT', {clear = true })
+    vim.api.nvim_create_autocmd({'BufWritePost'}, {
+        -- 指定需要格式化的文件类型
+        pattern = {'*.lua', '*.cpp', '*.c', '*.h', '*.hpp', '*.py', '*.java', '*.js', '*.ts', '*.go', '*.rs', '*.json'},
+        group = auto_indent,
+        command = 'normal! gg=G``'
+    })
 else
 end

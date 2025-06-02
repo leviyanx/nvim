@@ -102,7 +102,11 @@ return require('lazy').setup({
         opts = require('plugin-config/telescope').opts
     },
     -- 编程语言语法高亮
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        opts = require("plugin-config/treesitter").opts
+    },
     -- lsp
     {'neovim/nvim-lspconfig', lazy=true},
     -- 快速安装不同语言的lsp的服务端

@@ -8,7 +8,6 @@ require('plugins')
 require('plugin-config/catppuccin')
 -- 启用插件
 require('plugin-config/toggleterm')
-require('plugin-config/treesitter')
 require('plugin-config/mason')
 
 -- 加载LSP配置

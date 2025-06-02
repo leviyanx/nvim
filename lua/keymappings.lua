@@ -58,6 +58,17 @@ vim.keymap.set('n', '<leader>yp', ':lua vim.fn.setreg("+", vim.fn.expand("%:p"))
 -- dw删除当前光标所在单词
 vim.api.nvim_set_keymap("n", "dw", "diw", {noremap = true, silent = true})
 
+-- 代码折叠设置
+vim.opt.foldenable = true       -- 启用代码折叠
+vim.opt.foldmethod = 'expr'     -- 设置折叠方法为基于语法 (也可以考虑 'indent' 或配合插件使用 'expr')
+vim.opt.foldexpr = 'nvim_treesitter#foldexper()'
+vim.opt.foldcolumn = '0'        -- 设置折叠区域的宽度 (可以设为 '1' 以显示折叠标记)
+vim.opt.foldlevel = 99          -- 默认不折叠
+vim.opt.foldlevelstart = 99     -- 打开文件时应用的折叠级别（99表示不折叠）
+-- 使用空格键来切换折叠状态 (za 是更简单且常用的方式)
+vim.keymap.set('n', '<Space>', 'za', { silent = true, desc = "切换代码折叠" })
+
+
 -- ==========
 -- insert模式
 -- ==========
