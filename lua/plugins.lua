@@ -116,7 +116,17 @@ return require('lazy').setup({
             "mason-org/mason.nvim",
             "neovim/nvim-lspconfig"
         },
-
+        opts = require("lsp/installer").opts
+    },
+    {
+        "mason-org/mason.nvim",
+        event = "VeryLazy",
+        opts = {
+            PATH = 'prepend',
+            ui = {
+                border = 'rounded'
+            }
+        }
     },
     -- 自动补全
     -- nvim-cmp

@@ -1,12 +1,6 @@
-require('mason').setup({
-    PATH = 'prepend',
-    ui = {
-        border = 'rounded'
-    }
-})
+local M = {}
 
--- LSP自动安装配置
-require('mason-lspconfig').setup({
+M.opts = {
     -- LSP服务器安装列表
     ensure_installed = {
         'cmake',
@@ -16,11 +10,12 @@ require('mason-lspconfig').setup({
         'jsonls',
         'eslint' -- js, ts
     },
-    -- 允许自动安装
-    automatic_installation = true,
+    -- 不允许自动安装
+    automatic_installation = false,
     automatic_enable = {
         'lua_ls',
         'eslint'
     }
+}
 
-})
+return M
