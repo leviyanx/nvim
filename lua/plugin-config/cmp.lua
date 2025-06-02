@@ -1,8 +1,8 @@
-local cmp = require("cmp")
-local lspkind = require("lspkind")
 local M = {}
 
-M.setup = function()
+function M.setup()
+    local cmp = require("cmp")
+    local lspkind = require("lspkind")
     cmp.setup({
         -- 设置代码片段引擎，用于根据代码片段补全
         snippet = {

@@ -123,7 +123,9 @@ return require('lazy').setup({
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
-            "hrsh7th/cmp-cmdline"
+            "hrsh7th/cmp-cmdline",
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip'
         },
         config = function()
             require("plugin-config/cmp").setup()
@@ -140,7 +142,7 @@ return require('lazy').setup({
         dependencies = { "nvim-treesitter/nvim-treesitter", "hrsh7th/nvim-cmp" },
         opts = {}
     },
-    -- vsnip
+    -- vsnip: vscode(LSP)'s snippets feature in neovim/vim
     {'hrsh7th/cmp-vsnip', lazy=true},
     {'hrsh7th/vim-vsnip', lazy=true},
     {'rafamadriz/friendly-snippets', lazy=true},
