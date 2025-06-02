@@ -53,7 +53,7 @@ return require('lazy').setup({
         dependencies = 'nvim-tree/nvim-web-devicons', -- optional, 会随nvim-tree加载
         cmd = { "NvimTreeToggle", "NvimTreeFindFile", "NvimTreeFocus", "NvimTreeClose" },
         keys = {
-            {'<leader>tb', '<cmd>NvimTreeToggle<CR>', mode = 'n', silent = true, desc = '打开/关闭nvim tree' }
+            {'<leader>fe', '<cmd>NvimTreeToggle<CR>', mode = 'n', silent = true, desc = '打开/关闭nvim tree' }
         },
         init = function()
             -- 禁用netrw
