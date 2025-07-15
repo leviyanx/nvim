@@ -17,9 +17,9 @@ M.opts = {
     -- ---LHS of operator-pending mappings in NORMAL and VISUAL mode
     opleader = {
         ---Line-comment keymap
-        line = '<leader>c',
+        line = '<leader>ci',
         ---Block-comment keymap
-        block = '<leader>b'
+        block = '<leader>cb'
     },
     ---LHS of extra mappings
     extra = {
