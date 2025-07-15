@@ -68,6 +68,8 @@ vim.opt.foldlevelstart = 99     -- 打开文件时应用的折叠级别（99表�
 -- 使用空格键来切换折叠状态 (za 是更简单且常用的方式)
 vim.keymap.set('n', '<Space>', 'za', { silent = true, desc = "切换代码折叠" })
 
+-- 格式化
+vim.keymap.set('n', '<A-S-f>', 'gg=G``', {silent = true, desc = "格式化本文件代码"})
 
 -- ==========
 -- insert模式
@@ -75,3 +77,6 @@ vim.keymap.set('n', '<Space>', 'za', { silent = true, desc = "切换代码折叠
 
 -- S-tab减少缩进
 vim.keymap.set('i', '<S-Tab>', '<C-d>', { silent = true })
+-- 格式化
+vim.keymap.set('i', '<A-S-f>', '<esc>gg=G``a', {silent = true, desc = "格式化本文件代码"})
+
