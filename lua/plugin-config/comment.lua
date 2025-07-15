@@ -12,14 +12,14 @@ M.opts = {
         ---Line-comment toggle keymap
         line = '<leader>ci',
         ---Block-comment toggle keymap
-        block = '<leader>cb',
+        block = '<leader>cb'
     },
     -- ---LHS of operator-pending mappings in NORMAL and VISUAL mode
     opleader = {
         ---Line-comment keymap
         line = '<leader>c',
         ---Block-comment keymap
-        block = '<leader>b',
+        block = '<leader>b'
     },
     ---LHS of extra mappings
     extra = {
@@ -28,7 +28,7 @@ M.opts = {
         ---Add comment on the line below
         below = '<leader>co',
         ---Add comment at the end of line
-        eol = '<leader>cA',
+        eol = '<leader>cA'
     },
     ---Enable keybindings
     ---NOTE: If given `false` then the plugin won't create any mappings
@@ -36,12 +36,12 @@ M.opts = {
         ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
         basic = true,
         ---Extra mapping; `gco`, `gcO`, `gcA`
-        extra = true,
+        extra = true
     },
     ---Function to call before (un)comment
     pre_hook = nil,
     ---Function to call after (un)comment
-    post_hook = nil,
+    post_hook = nil
 }
 
-    return M
+return M
