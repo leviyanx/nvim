@@ -17,10 +17,10 @@ function M.setup()
         mapping = {
             -- 选择上一个
             ['<C-p>'] = cmp.mapping.select_prev_item(),
-            ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+            ['<Up>'] = cmp.mapping.select_prev_item(),
             -- 选择下一个
             ['<C-n>'] = cmp.mapping.select_next_item(),
-            ['<Tab>'] = cmp.mapping.select_next_item(),
+            ['<Down>'] = cmp.mapping.select_next_item(),
             -- 出现补全
             ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
             -- 取消补全
@@ -30,6 +30,10 @@ function M.setup()
             }),
 
             -- 确认使用某个补全项
+            ['<Tab>'] = cmp.mapping.confirm({
+                select = true,
+                behavior = cmp.ConfirmBehavior.Replace
+            }),
             ['<CR>'] = cmp.mapping.confirm({
                 select = true,
                 behavior = cmp.ConfirmBehavior.Replace
