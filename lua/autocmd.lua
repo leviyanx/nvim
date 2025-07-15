@@ -30,5 +30,22 @@ if vim.fn.has "nvim-0.7" then
         group = auto_indent,
         command = 'normal! gg=G``'
     })
+
+    local filetype_group = vim.api.nvim_create_augroup('filetype_settings', {
+        clear = true
+    })
+    -- 禁用注释自动续行
+    vim.api.nvim_create_autocmd("FileType", {
+        pattern = "*",
+        group = filetype_group,
+        callback = function()
+            -- formatoptions 控制文本格式化行为
+            -- 需要移除的三个标志：
+            -- c：自动换行时在文本宽度处插入注释符号
+            -- r：按 <Enter> 时自动插入注释符号
+            -- o：使用 o/O 命令时自动插入注释符号
+            vim.opt.formatoptions:remove({"c", "r", "o"})
+        end
+    })
 else
 end
