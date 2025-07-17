@@ -46,6 +46,12 @@ Plugins will be lazy-loaded when one of the following is true
 return require('lazy').setup({
     -- 主题
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    -- 图标
+    {
+        'nvim-tree/nvim-web-devicons',
+        lazy = true
+    },
+
     -- 文件列表
     {
         -- nvim-tree
@@ -63,11 +69,7 @@ return require('lazy').setup({
         opts = require('plugin-config/nvimtree').opts,
         config = require('plugin-config/nvimtree').configure(),
     },
-    -- 图标
-    {
-        'nvim-tree/nvim-web-devicons',
-        lazy = true
-    },
+
     -- 状态栏
     {
         'nvim-lualine/lualine.nvim',
@@ -75,6 +77,7 @@ return require('lazy').setup({
         opts = require('plugin-config/lualine').opts,
         event = "VeryLazy"
     },
+
     -- 快捷键提示
     {
         "folke/which-key.nvim",
@@ -82,8 +85,10 @@ return require('lazy').setup({
         cmd = 'WhichKey',
         event = 'VeryLazy'
     },
+
     -- terminal
     {'akinsho/toggleterm.nvim', version = '*', config = true},
+
     -- 模糊搜索
     -- telescope, telescope-file-browser: neovim >= 0.9
     {
@@ -101,13 +106,15 @@ return require('lazy').setup({
         },
         opts = require('plugin-config/telescope').opts
     },
+
     -- 编程语言语法高亮
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         opts = require("plugin-config/treesitter").opts
     },
-    -- lsp
+
+    -- LSP
     {'neovim/nvim-lspconfig', lazy=true},
     -- 快速安装不同语言的lsp的服务端
     {
@@ -128,6 +135,16 @@ return require('lazy').setup({
             }
         }
     },
+    -- LSP美化
+    'onsails/lspkind-nvim', -- vscode风格的图标提示
+    {
+        -- lspsaga 增强 Neovim 原生 LSP 体验的 UI 插件
+        'glepnir/lspsaga.nvim', 
+        cmd = 'Lspsaga',
+        event = 'VeryLazy',
+        opts = {}
+    },
+
     -- 自动补全
     -- nvim-cmp
     {
@@ -149,6 +166,11 @@ return require('lazy').setup({
     {'hrsh7th/cmp-buffer', lazy=true},
     {'hrsh7th/cmp-path', lazy=true},
     {'hrsh7th/cmp-cmdline', lazy=true},
+    -- vsnip: vscode(LSP)'s snippets feature in neovim/vim
+    {'hrsh7th/cmp-vsnip', lazy=true},
+    {'hrsh7th/vim-vsnip', lazy=true},
+    {'rafamadriz/friendly-snippets', lazy=true},
+
     -- autopairs
     {
         "windwp/nvim-autopairs",
@@ -156,20 +178,7 @@ return require('lazy').setup({
         dependencies = { "nvim-treesitter/nvim-treesitter", "hrsh7th/nvim-cmp" },
         opts = {}
     },
-    -- vsnip: vscode(LSP)'s snippets feature in neovim/vim
-    {'hrsh7th/cmp-vsnip', lazy=true},
-    {'hrsh7th/vim-vsnip', lazy=true},
-    {'rafamadriz/friendly-snippets', lazy=true},
-    -- lspkind
-    'onsails/lspkind-nvim',
-    -- LSP美化
-    {
-        -- lspsaga
-        'glepnir/lspsaga.nvim',
-        cmd = 'Lspsaga',
-        event = 'VeryLazy',
-        opts = {}
-    },
+
     -- symbols outline
     {
         'simrat39/symbols-outline.nvim',
@@ -178,6 +187,7 @@ return require('lazy').setup({
             {'<leader>so', '<cmd>SymbolsOutline<CR>', silent = true, desc = '打开/关闭symbol outline'}
         }
     },
+
     -- git
     {
         -- gitsigns
@@ -185,12 +195,14 @@ return require('lazy').setup({
         'lewis6991/gitsigns.nvim',
         opts = require('plugin-config/gitsigns').opts,
     },
+
+    -- diffview
     {
-        -- diffview
         'sindrets/diffview.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
         event = "VeryLazy"
     },
+
     -- comments
     {
         'numToStr/Comment.nvim',
