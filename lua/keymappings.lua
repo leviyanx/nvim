@@ -77,6 +77,8 @@ vim.keymap.set('n', '<A-S-f>', 'gg=G``', {silent = true, desc = "格式化本文
 
 -- S-tab减少缩进
 vim.keymap.set('i', '<S-Tab>', '<C-d>', { silent = true })
+-- 快速操作
+vim.keymap.set('i', '<C-s>', '<esc>:w<CR>a', { silent = true, desc = "保存" })
 -- 格式化
 vim.keymap.set('i', '<A-S-f>', '<esc>gg=G``a', {silent = true, desc = "格式化本文件代码"})
 
