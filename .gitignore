@@ -17,4 +17,5 @@
 !autoload/plug.vim
 !ftplugin
 !lua
+!vsnip_snippets
 !archive
