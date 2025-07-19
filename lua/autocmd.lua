@@ -24,14 +24,14 @@ if vim.fn.has "nvim-0.7" then
     })
     -- 每次保存，自动格式化代码
     -- require treesitter
-    vim.api.nvim_create_autocmd({'BufWritePost'}, {
-        -- 指定需要格式化的文件类型
-        pattern = {'*.lua', '*.cpp', '*.c', '*.h', '*.hpp', '*.py', '*.java', '*.js', '*.ts', '*.go', '*.rs', '*.json'},
-        group = auto_indent,
-        -- gg=G是格式化整个文件的命令，相等于ggvG=，=是treesitter开启indent的默认格式化快捷键
-        -- ``跳回原行
-        command = 'normal! gg=G``'
-    })
+    -- vim.api.nvim_create_autocmd({'BufWritePost'}, {
+    --     -- 指定需要格式化的文件类型
+    --     pattern = {'*.lua', '*.cpp', '*.c', '*.h', '*.hpp', '*.py', '*.java', '*.js', '*.ts', '*.go', '*.rs', '*.json'},
+    --     group = auto_indent,
+    --     -- gg=G是格式化整个文件的命令，相等于ggvG=，=是treesitter开启indent的默认格式化快捷键
+    --     -- ``跳回原行
+    --     command = 'normal! gg=G``'
+    -- })
 
     local filetype_group = vim.api.nvim_create_augroup('filetype_settings', {
         clear = true
