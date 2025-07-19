@@ -1,0 +1,45 @@
+{
+    "header guard": {
+        "prefix": "#ifndef",
+        "body": [
+            "#ifndef __${1:}_H__",
+            "#define __${1:}_H__",
+            "",
+            "${0}",
+            "",
+            "#endif"
+        ],
+        "description": "生成标准头文件防卫（Header Guard）"
+    },
+    "include header file in project directory": {
+        "prefix": "#ifndef",
+        "body": [
+            "#include \"${1:}.h\"",
+            "${0}"
+        ],
+        "description": "引入项目目录中的头文件"
+    },
+    "add function document": {
+        "prefix": "@brief",
+        "body": [
+            "/**",
+            "  * @brief  ${1}",
+            "  * @param  ${2}",
+            "  * @retval ${3}",
+            "  */"
+        ],
+        "description": "引入项目目录中的头文件"
+    },
+    "51 MCU main": {
+        "prefix": "main",
+        "body": [
+            "void main()",
+            "{",
+                "\twhile(1)",
+                "\t{",
+                    "\t\t${0}",
+                    "\t}",
+                    "}"
+        ]
+    }
+}
